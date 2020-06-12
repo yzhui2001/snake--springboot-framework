@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.snake.springboot.{{{modulename}}}</groupId>
+  <artifactId>springboot-{{{modulename}}}-service</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>springboot-{{{modulename}}}-service</name>
+  <description>Srpingboot service template.</description>
+  
+ <modules>
+  	<module>springboot-{{{modulename}}}-service-api</module>
+  	<module>springboot-{{{modulename}}}-service-entity</module>
+  	<module>springboot-{{{modulename}}}-service-persistent</module>
+  	<module>springboot-{{{modulename}}}-service-impl</module>
+  </modules>
+  
+  <!-- 版本说明：这里统一管理依赖的版本号
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.yu.springboot.modulename</groupId>
+				<artifactId>springboot-modulename-service-api</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yu.springboot.modulename</groupId>
+				<artifactId>springboot-modulename-service-entity</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yu.springboot.modulename</groupId>
+				<artifactId>springboot-modulename-service-persistent</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.yu.springboot.modulename</groupId>
+				<artifactId>springboot-modulename-service-impl</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+   -->
+</project>

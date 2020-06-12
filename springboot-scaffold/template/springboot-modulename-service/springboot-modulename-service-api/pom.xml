@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.snake.springboot.{{{modulename}}}</groupId>
+    <artifactId>springboot-{{{modulename}}}-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>springboot-{{{modulename}}}-service-api</artifactId>
+  <name>springboot-{{{modulename}}}-service-api</name>
+  <description>api</description>
+
+   <properties>
+      <springboot.{{{modulename}}}.service.entity.version>0.0.1-SNAPSHOT</springboot.{{{modulename}}}.service.entity.version>
+   </properties>
+  
+  <dependencies>
+    <dependency>
+        <groupId>com.snake.springboot.{{{modulename}}}</groupId>
+        <artifactId>springboot-{{{modulename}}}-service-entity</artifactId>
+        <version>${springboot.{{{modulename}}}.service.entity.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>

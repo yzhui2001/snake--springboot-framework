@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="create" name="springboot-modulename-service">
+	<description>
+        A snake springboot project
+    </description>
+	<property name="src" location="${basedir}" />
+	<property name="dist" location="${basedir}/dist" />
+	<property name="modulename" value="${modulename}" />
+	<property name="classname" value="Demo" />
+
+	<condition property="modulename" value="demo">
+		<not>
+			<isset property="modulename" />
+		</not>
+	</condition>
+
+	<target name="clean" description="Clean springboot project ">
+		<delete dir="${dist}/springboot-${modulename}-service" />
+		<echo message="basedir = ${src}" />
+		<echo message=" ${dist}" />
+		<echo message="This is ${modulename}" />
+	</target>
+
+
+	<target name="copy" description="Copy springboot project">
+		<copy todir="${dist}/springboot-${modulename}-service" filtering="true">
+			<fileset dir="${src}/template/springboot-modulename-service" />
+		</copy>
+	</target>
+
+	<target name="rename" description="Rename springboot project">
+		<rename src="${dist}\springboot-${modulename}-service\springboot-modulename-service-persistent" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-persistent"/>
+		<rename src="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-persistent\src\main\java\com\snake\springboot\modulename" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-persistent\src\main\java\com\snake\springboot\${modulename}"/>		
+
+		<rename src="${dist}\springboot-${modulename}-service\springboot-modulename-service-entity" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-entity" />
+		<rename src="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-entity\src\main\java\com\snake\springboot\modulename" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-entity\src\main\java\com\snake\springboot\${modulename}" />
+
+		<rename src="${dist}\springboot-${modulename}-service\springboot-modulename-service-api" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-api" />
+		<rename src="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-api\src\main\java\com\snake\springboot\modulename" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-api\src\main\java\com\snake\springboot\${modulename}" />
+		
+		<rename src="${dist}\springboot-${modulename}-service\springboot-modulename-service-impl" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl" />
+		<rename src="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\main\java\com\snake\springboot\modulename" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\main\java\com\snake\springboot\${modulename}" />
+		<rename src="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\main\java\com\snake\springboot\${modulename}\service\SpringbootclassnameServiceStartApplication.java" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\main\java\com\snake\springboot\${modulename}\service\Springboot${classname}ServiceStartApplication.java" />
+
+		<rename src="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\test\java\com\snake\springboot\modulename" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\test\java\com\snake\springboot\${modulename}" />		
+		<rename src="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\test\java\com\snake\springboot\${modulename}\service\impl\SpringbootclassnameServiceImplApplicationTests.java" dest="${dist}\springboot-${modulename}-service\springboot-${modulename}-service-impl\src\test\java\com\snake\springboot\${modulename}\service\impl\Springboot${classname}ServiceImplApplicationTests.java" />		
+	</target>
+
+	<target name="replace" description="Replace springboot project">
+		<replace dir="${dist}/springboot-${modulename}-service/" includes="**/*.*" encoding="UTF-8">
+			<replacefilter token="{{{modulename}}}" value="${modulename}" />
+			<replacefilter token="{{{classname}}}" value="${classname}" />
+		</replace>
+	</target>
+
+	<target name="create" description="Create snake springboot" depends="clean,copy,rename,replace">
+	</target>
+
+</project>
