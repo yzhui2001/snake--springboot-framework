@@ -94,7 +94,7 @@ xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLS
 	    <dependency>
 	      <groupId>junit</groupId>
 	      <artifactId>junit</artifactId>
-	      <version>3.8.1</version>
+	      <version>4.13.1</version>
 	      <scope>test</scope>
 	    </dependency>
   </dependencies>
